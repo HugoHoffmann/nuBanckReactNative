@@ -1,5 +1,6 @@
 import React from 'react';
 // import QRcode from 'react-native-qrcode';
+import QRCode from 'react-native-qrcode-svg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {
@@ -22,12 +23,12 @@ export default function Menu({translateY}) {
         }),
       }}>
       <Code>
-        {/* <QRcode
+        <QRcode
           value="https://github.com/HugoHoffmann"
           size={80}
           fgColor="#fff"
           bgColor="#8b10ae"
-        /> */}
+        />
       </Code>
       <Nav>
         <NavItem>
