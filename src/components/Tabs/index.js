@@ -8,13 +8,6 @@ export default function Tabs({translateY}) {
     <Container
       style={{
         opacity: translateY.interpolate({
-          transform: [{
-            translateY: translateY.interpolate({
-              inputRange: [0, 380],
-              outputRange: [0, 30],
-              extrapolate: 'clamp'
-            })
-          }]
           inputRange: [0, 310],
           outputRange: [1, 0.3],
           extrapolate: 'clamp',

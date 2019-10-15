@@ -20,6 +20,7 @@ import {
 } from './styles';
 
 export default function Main() {
+  let offset = 0;
   const translateY = new Animated.Value(0);
   const animetedEvent = Animated.event(
     [
