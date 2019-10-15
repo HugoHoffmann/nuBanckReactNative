@@ -2,11 +2,25 @@ import React from 'react';
 // import QRcode from 'react-native-qrcode';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import {Container,SignOutButton, SignOutButtonText, Code, Nav, NavItem, NavText} from './styles';
+import {
+  Container,
+  SignOutButton,
+  SignOutButtonText,
+  Code,
+  Nav,
+  NavItem,
+  NavText,
+} from './styles';
 
-export default function Menu() {
+export default function Menu({translateY}) {
   return (
-    <Container>
+    <Container
+      style={{
+        opacity: translateY.interpolate({
+          inputRange: [0, 150],
+          outputRange: [0, 1],
+        }),
+      }}>
       <Code>
         {/* <QRcode
           value="https://github.com/HugoHoffmann"
