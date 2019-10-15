@@ -34,7 +34,30 @@ export default function Main() {
       useNativeDriver: true,
     },
   );
-  function onHandlerStateChanged(event) {}
+  function onHandlerStateChanged(event) {
+    if (event.nativeEvent.oldState === State.ACTIVE) {
+      const {translationY} = event.nativeEvent;
+      let opened = false;
+      offset += translationY;
+
+      if (translationY >= 100) {
+        opened = true;
+      } else {
+        translateY.setOffset(0);
+        translateY.setValue(offset);
+      }
+
+      Animated.timing(translateY, {
+        toValue: opened ? 310 : 0,
+        duration: 200,
+        useNativeDriver: true,
+      }).start(() => {
+        offset = opened ? 310 : 0;
+        translateY.setOffset(offset);
+        translateY.setValue(0);
+      });
+    }
+  }
   return (
     <Container>
       <Header />
